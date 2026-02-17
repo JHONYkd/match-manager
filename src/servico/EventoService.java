@@ -6,12 +6,22 @@ import repositorio.EventoRepositorio;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * TODO: Adicionar novas funcoes no servico
+ * <p>
+ * Adicionar novo participante no evento
+ * Remover participante
+ * Dividir o custo do evento por todos os participantes
+ */
 public class EventoService {
     private final EventoRepositorio eventoRepositorio;
+
     public EventoService() {
         this.eventoRepositorio = new EventoRepositorio();
     }
-        public void ctiarEvento (Evento evento) {
+
+    // TODO: Corrigir escrita do nome da funcao
+    public void ctiarEvento(Evento evento) {
         if (evento == null) {
             throw new IllegalArgumentException("Evento nao pode ser nulo");
         }
@@ -34,37 +44,35 @@ public class EventoService {
 
         eventoRepositorio.salvar(evento);
 
+    }
+
+    public Evento buscarEventoPorId(long id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("Id nao pode ser negativo");
         }
 
-        public Evento buscarEventoPorId(long id) {
-            if (id <= 0) {
-                throw new IllegalArgumentException("Id nao pode ser negativo");
-            }
+        Evento evento = eventoRepositorio.BuscarPorId(id);
 
-            Evento evento = eventoRepositorio.BuscarPorId(id);
-
-            if (evento == null) {
-                throw new IllegalArgumentException("Evento nao pode ser encontrado");
-            }
-            return evento;
+        if (evento == null) {
+            throw new IllegalArgumentException("Evento nao pode ser encontrado");
         }
+        return evento;
+    }
 
-        public List<Evento> listarTodos() {
+    public List<Evento> listarTodos() {
         return eventoRepositorio.listarTodos();
-        }
+    }
 
-        public void atualizarEvento (Evento evento) {
+    // TODO: Atualizar precisa seguir as mesmas regras que a criacao do evento
+    public void atualizarEvento(Evento evento) {
         if (evento.getId() <= 0) {
             throw new IllegalArgumentException("Id nao encontrado");
         }
-        buscarEventoPorId(evento.getId());
         eventoRepositorio.atualizar(evento);
-        }
+    }
 
-        public void removerEvento (long id) {
-        buscarEventoPorId(id);
-        
+    public void removerEvento(long id) {
         eventoRepositorio.delete(id);
-        }
+    }
 
 }

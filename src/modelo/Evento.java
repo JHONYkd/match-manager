@@ -7,7 +7,7 @@ public class Evento {
     private LocalDateTime datahora;
     private long custo;
     private Endereco local;
-    private ParticipacaoEvento participante;
+    private ParticipacaoEvento participante; // TODO: Deve ser uma lista. Cada evento tem varios participantes
 
     public long getId() {
         return id;
