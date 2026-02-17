@@ -1,4 +1,4 @@
-package modelo;
+package match_manager.modelo;
 
 import java.time.LocalDateTime;
 

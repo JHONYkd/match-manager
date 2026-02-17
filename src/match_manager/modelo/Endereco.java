@@ -1,4 +1,4 @@
-package modelo;
+package match_manager.modelo;
 
 public class Endereco {
     private long id;

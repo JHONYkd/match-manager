@@ -1,4 +1,4 @@
-package repositorio;
+package match_manager.repositorio;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,7 +1,6 @@
-package repositorio;
+package match_manager.repositorio;
 
-import modelo.Endereco;
-import modelo.Evento;
+import match_manager.modelo.Evento;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -104,7 +103,7 @@ public class EventoRepositorio {
             ps.setLong(1, evento.getId());
             ps.setLong(2, evento.getCusto());
             ps.setLong(3, evento.getLocal().getId());
-            ps.setTime(4, evento.getDatahora()); // TODO: Corrigir tipo
+//            ps.setTime(4, evento.getDatahora()); // TODO: Corrigir tipo
 
             ps.executeUpdate();
         } catch (SQLException e) {

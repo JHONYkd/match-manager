@@ -1,13 +1,13 @@
-package servico;
+package match_manager.servico;
 
-import modelo.Evento;
-import repositorio.EventoRepositorio;
+import match_manager.modelo.Evento;
+import match_manager.repositorio.EventoRepositorio;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * TODO: Adicionar novas funcoes no servico
+ * TODO: Adicionar novas funcoes no match_manager.servico
  * <p>
  * Adicionar novo participante no evento
  * Remover participante
